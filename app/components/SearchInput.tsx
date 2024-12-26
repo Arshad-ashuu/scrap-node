@@ -2,10 +2,10 @@
 "use client";
 import React, { useState } from 'react';
 
-export const SearchInput = ({ onSearch }) => {
+export const SearchInput = ({ onSearch }: { onSearch: (query: string) => void }) => {
   const [query, setQuery] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSearch(query); // Pass the query to the parent component
   };
